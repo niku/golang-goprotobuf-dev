@@ -4,6 +4,7 @@ RUN mkdir /app && \
     apt-get update -qq && \
     apt-get install -t stretch-backports -y \
                 protobuf-compiler \
-                golang-goprotobuf-dev
+                golang-goprotobuf-dev \
+                golang
 
 WORKDIR /app
