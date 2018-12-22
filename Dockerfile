@@ -1,10 +1,10 @@
 FROM debian:stretch-backports
 
-RUN mkdir /app && \
+ENV HOME /app
+WORKDIR $HOME
+
+RUN mkdir -p $HOME && \
     apt-get update -qq && \
     apt-get install -t stretch-backports -y \
                 protobuf-compiler \
-                golang-goprotobuf-dev \
-                golang
-
-WORKDIR /app
+                python3-protobuf
